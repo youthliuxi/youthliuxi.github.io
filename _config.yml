@@ -75,7 +75,7 @@ deploy:
   type: git
   repo: 
     github: git@github.com:youthliuxi/youthliuxi.github.io.git,master
-    # coding: git@git.coding.net:iron_baby/iron_baby.coding.me.git,master
+    coding: git@git.coding.net:iron_baby/iron_baby.coding.me.git,master
     # bitbucket: git@bitbucket.org:youthliuxi/hexo-blog.git,master
 
 # 搜索
