@@ -3,17 +3,16 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 你若盛开，蝴蝶爱来不来
 subtitle:
 description:
-keywords:
-author: John Doe
+author: edward
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://youthliuxi.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -43,16 +42,7 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
-  
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
-index_generator:
-  path: ''
-  per_page: 10
-  order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -70,12 +60,35 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
+# Support for youyan comments system.
+# You can get your uid from http://www.uyan.cc
+youyan_uid: 2157039
+
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: spfk
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: 
+    github: git@github.com:youthliuxi/youthliuxi.github.io.git,master
+    # coding: git@git.coding.net:iron_baby/iron_baby.coding.me.git,master
+    # bitbucket: git@bitbucket.org:youthliuxi/hexo-blog.git,master
+
+# 搜索
+##  search: 
+##    path: search/search.xml
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+#RSS订阅
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
