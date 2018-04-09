@@ -52,15 +52,56 @@ categories:
 ## 注意
 如果你把
 
-> git remote add origin git@github.com:youthliuxi/youthliuxi.github.io
+```bash
+$ git remote add origin git@github.com:youthliuxi/youthliuxi.github.io
+```
 
 错误的输入成了
 
-> git remote add origin https://github.com/youthliuxi/youthliuxi.github.io
+```bash
+$ git remote add origin https://github.com/youthliuxi/youthliuxi.github.io
+```
 
 不要悲伤，不要心急，以下办法可以帮到你
 
-> git remote rm origin
-> git remote add origin git@github.com:youthliuxi/youthliuxi.github.io
+```bash
+$ git remote rm origin
+$ git remote add origin git@github.com:youthliuxi/youthliuxi.github.io
+```
 
 不要问我为啥知道这个，还不是因为脑子有问题，选了个https连接方式
+
+## 从ubuntu恢复备份内容
+接下来才是本次实验的重头戏，昨天没做完，今天继续，搞定了，接着写总结
+切换到ubuntu系统，由于我的ubuntu从来没有配置过git，所以我应该先从配置git做起，废话不多说，直接上代码
+
+### 配置git
+```bash
+$ git config --global user.email "lx_einstein@sina.com"
+$ git config --global user.name "youthliuxi"
+$ ssh-keygen -t rsa -C "lx_einstein@sina.com"
+//这期间会让你输入保存公钥的地址（直接回车就会保存在下面那个默认地址里）、github登录密码、再次输入密码
+$ vim ~/.ssh/id_rsa.pub 
+//把这段代码整个复制下来，找到github和coding设置中相应的ssh配置位置，添加进去即可
+```
+
+### 从github恢复hexo源码
+```bash
+$ git clone git@github.com:youthliuxi/youthliuxi.github.io
+//这里建议使用git@github.com，只有这样，公钥才是有用的，否则就需要每次都输入密码
+//倘若clone错了，没关系，请网上看【注意】那部分
+$ cd youthliuxi.github.io
+$ npm install --save hexo
+$ npm instlal --save hexo-deployer-git
+$ hexo g && hexo d //测试一下，好不好使
+```
+
+### 今后两个平台的操作注意事项
+```bash
+$ git pull origin hexo
+//写博客或者修改博客
+$ git add *
+$ git commit -m "XXX from windwos or ubuntu"
+$ git push origin hexo
+$ hexo g && hexo d
+```
