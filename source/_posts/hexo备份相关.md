@@ -23,19 +23,19 @@ categories:
 1. 新建github项目“youthliuxi.github.io”，选择不生成readme
 2. 新建文件夹“youthliuxi.github.io”，取一样的名字纯粹是为了好看
 3. 在文件夹中运行：
-	> hexo init
-	> // 没有的话，就先运行npm install -g hexo
-	> git init
-	> git checkout hexo
-	> // 创建hexo分支，名字都行，好记就行
-	> git add * 
-	> // 很有可能会提示如果你想添加所有项目，请使用【-f】参数，不管应该没事儿
-	> git commit -m “备注”
-	> git remote add origin git@github.com:youthliuxi/youthliuxi.github.io.git
-	> git push origin hexo
-	> // 这样就成功的把源码上传到hexo分支上了
-
-***
+```bash
+	hexo init
+	// 没有的话，就先运行npm install -g hexo
+	git init
+	git checkout hexo
+	// 创建hexo分支，名字都行，好记就行
+	git add * 
+	// 很有可能会提示如果你想添加所有项目，请使用【-f】参数，不管应该没事儿
+	git commit -m “备注”
+	git remote add origin git@github.com:youthliuxi/youthliuxi.github.io.git
+	git push origin hexo
+	// 这样就成功的把源码上传到hexo分支上了
+```
 	> 创建分支命令 git branch (branchname) 列出分支 git branch
 	> 切换分支命令 git checkout (branchname)
 	> 合并分支 git merge (branchname)
