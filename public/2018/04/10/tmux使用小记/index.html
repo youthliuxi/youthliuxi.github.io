@@ -3,23 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>微信网页授权获取用户信息 | 你若盛开，蝴蝶爱来不来</title>
+  <title>tmux使用小记 | 你若盛开，蝴蝶爱来不来</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文章转载自胡方运的博客，憧·憬（hufangyun.com），原文链接：http://hufangyun.com/?p=470 微信,微信,猿们又可以大展身手喽O(∩_∩)O~~">
+  <meta name="description" content="安装1sudo apt install tmux">
+<meta name="keywords" content="linux, tmux, ubuntu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信网页授权获取用户信息">
-<meta property="og:url" content="http://youthliuxi.github.io/2015/11/23/微信网页授权获取用户信息/index.html">
+<meta property="og:title" content="tmux使用小记">
+<meta property="og:url" content="http://youthliuxi.github.io/2018/04/10/tmux使用小记/index.html">
 <meta property="og:site_name" content="你若盛开，蝴蝶爱来不来">
-<meta property="og:description" content="文章转载自胡方运的博客，憧·憬（hufangyun.com），原文链接：http://hufangyun.com/?p=470 微信,微信,猿们又可以大展身手喽O(∩_∩)O~~">
+<meta property="og:description" content="安装1sudo apt install tmux">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://hufangyun.com/wp-content/uploads/2015/11/wechat1-300x157.png">
-<meta property="og:image" content="http://hufangyun.com/wp-content/uploads/2015/11/wechat.png">
-<meta property="og:image" content="http://hufangyun.com/wp-content/uploads/2015/11/wechat2-300x232.jpg">
-<meta property="og:updated_time" content="2017-12-31T13:55:06.971Z">
+<meta property="og:updated_time" content="2018-04-10T16:35:17.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信网页授权获取用户信息">
-<meta name="twitter:description" content="文章转载自胡方运的博客，憧·憬（hufangyun.com），原文链接：http://hufangyun.com/?p=470 微信,微信,猿们又可以大展身手喽O(∩_∩)O~~">
-<meta name="twitter:image" content="http://hufangyun.com/wp-content/uploads/2015/11/wechat1-300x157.png">
+<meta name="twitter:title" content="tmux使用小记">
+<meta name="twitter:description" content="安装1sudo apt install tmux">
   
     <link rel="alternative" href="/atom.xml" title="你若盛开，蝴蝶爱来不来" type="application/atom+xml">
   
@@ -237,11 +234,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-微信网页授权获取用户信息" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-tmux使用小记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/11/23/微信网页授权获取用户信息/" class="article-date">
-      <time datetime="2015-11-22T19:18:29.000Z" itemprop="datePublished">2015-11-23</time>
+      <a href="/2018/04/10/tmux使用小记/" class="article-date">
+      <time datetime="2018-04-10T15:56:24.000Z" itemprop="datePublished">2018-04-10</time>
 </a>
     </div>
   
@@ -254,7 +251,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      微信网页授权获取用户信息
+      tmux使用小记
     </h1>
   
 
@@ -262,12 +259,12 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/程序猿/">程序猿</a>
-    </div>
-
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-tmux-ubuntu/">linux, tmux, ubuntu</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -275,61 +272,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>文章转载自胡方运的博客，憧·憬（hufangyun.com），原文链接：<a href="http://hufangyun.com/?p=470" target="_blank" rel="noopener">http://hufangyun.com/?p=470</a></p>
-<p>微信,微信,猿们又可以大展身手喽O(∩_∩)O~~</p>
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install tmux</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>今天讲以下几个知识点：</p>
-<p>&emsp;&emsp;1、微信的网页授权</p>
-<p>&emsp;&emsp;2、获取用户的信息（昵称、头像等）</p>
-<p>&emsp;&emsp;3、如何做到网页只能在微信打开</p>
-<p>&emsp;&emsp;不用说了，看官方的<a href="http://mp.weixin.qq.com/wiki/home/index.html" target="_blank" rel="noopener">开发文档</a></p>
-<p>&emsp;&emsp;在官方文档的左侧目录里找到“用户管理”—&gt;“<a href="http://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html" target="_blank" rel="noopener">网页授权获取用户基本信息</a>”</p>
-<p>然后我们一步步开始吧！</p>
-<p>1、在微信后台绑定一个域名，我们之后要把自己的开发的页面绑定在这个域名上。</p>
-<p><strong>设置</strong>：</p>
-<p>&emsp;&emsp;微信公众平台–&gt;开发者中心–&gt;接口权限表–&gt;网页授权获取用户基本信息（⊙﹏⊙b 藏的真隐蔽）</p>
-<p><img src="http://hufangyun.com/wp-content/uploads/2015/11/wechat1-300x157.png" alt="wechat1"></p>
-<p>&emsp;&emsp;他后面有个“修改” 好了在这写上你的域名，格式是这样的 hufangyun.com</p>
-<p>&emsp;&emsp;对就是不带子域，不带http:// 只写域名，也就是说sae一类的不能用喽</p>
-<p>2、网页授权有两两种</p>
-<p>&emsp;&emsp;<strong>第一种</strong>（snsapi_base）只获取用户的唯一标示OpenId,而且是静默授权，不需要用户点击同意授权。</p>
-<p>&emsp;&emsp;<strong>第二种</strong>（snsapi_userinfo）获取用户的头像、昵称、性别、城市、特权一类的具体信息。这种需要用户授权，如图：</p>
-<p><img src="http://hufangyun.com/wp-content/uploads/2015/11/wechat.png" alt="wechat"></p>
-<p>3、引导用户打开如下链接</p>
-<p>&emsp;&emsp;<code>https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;amp;redirect_uri=REDIRECT_URI&amp;amp;response_type=code&amp;amp;scope=SCOPE&amp;amp;state=STATE#wechat_redirect</code></p>
-<p>&emsp;&emsp;怎么引导用户打开呢？聪明的你已经想到了吧。比如说把这个链接加在底部菜单里或者关键词回复里。</p>
-<p>&emsp;&emsp;好了，我们一起分析一下这个链接</p>
-<p>&emsp;&emsp;<code>https://open.weixin.qq.com/connect/oauth2/authorize?</code>这一串是固定的，也就它使页面只能在微信里打开，转到QQ或者浏览器都会提示。（今天的第四个知识点讲完了）</p>
-<p><img src="http://hufangyun.com/wp-content/uploads/2015/11/wechat2-300x232.jpg" alt="wechat2"></p>
-<p>&emsp;&emsp;<code>appid=APPID</code>把APPID替换成你公众号对的appid 这个也是在微信公众号后台的开发者中心获得。</p>
-<p>&emsp;&emsp;<code>redirect_uri=REDIRECT_URI</code>这个参数是个重点，我们需要替换<code>REDIRECT_URI</code>这里就是填写你开发页面的地址，比如<a href="http://hufangyun.com/hello/index.php，域名就是我们在第一步绑定的域名。" target="_blank" rel="noopener">http://hufangyun.com/hello/index.php，域名就是我们在第一步绑定的域名。</a></p>
-<p>&emsp;&emsp;<code>scope=SCOPE</code>这个就是填写你选择那种授权方式。snsapi_base或这snsapi_userinfo 其他的参数看wiki了解吧。</p>
-<p>&emsp;&emsp;当用户触发了上面的链接时，我们可以获取其中的code值。</p>
-<p>PHP示例：</p>
-<blockquote>
-<p>$code = $_GET[‘code’];</p>
+<p>注：ctrl+b是唤醒控制操作响应，和vim里的esc推出编辑是一个感觉</p>
+<h2 id="常用部分"><a href="#常用部分" class="headerlink" title="常用部分"></a>常用部分</h2><blockquote>
+<p>ctrl+b ? 显示快捷键帮助<br>ctrl+b “ 横向分割屏幕<br>ctrl+b % 纵向分割屏幕<br>ctrl+b 方向键 切换屏幕<br>ctrl+b ctrl+方向键 调整分割窗口大小<br>ctrl+b o 跳到下一个分个窗口<br>ctrl+b w 以菜单方式显示及选择窗口<br>ctrl+b 0~9 选择几号窗口<br>ctrl+b q 显示分割窗口编号<br>ctrl+b c 新建窗口<br>ctrl+b p 选择前一个窗口<br>ctrl+b n 选择下一个窗口<br>ctrl+b x 关闭面板<br>ctrl+b &amp; 关闭窗口</p>
 </blockquote>
-<p>4、通过code换取网页授权access_token</p>
-<p>&emsp;&emsp;请求以下的链接，获取access_token</p>
-<p>&emsp;&emsp;<code>https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&amp;amp;secret=SECRET&amp;amp;code=CODE&amp;amp;grant_type=authorization_code</code></p>
-<p>&emsp;&emsp;appid和之前说的一样，替换成你的。</p>
-<p>&emsp;&emsp;<code>secret=SECRET</code>这个参数也是在微信公众号后台的开发者中心获得。</p>
-<p>php示例：</p>
-<blockquote>
-<p>function https_request($url, $data = null)&emsp;&emsp;//url 请求函数<br>{<br>$curl = curl_init();<br>curl_setopt($curl, CURLOPT_URL, $url);<br>curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);<br>curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);<br>if (!empty($data))<br>{<br>curl_setopt($curl, CURLOPT_POST, 1);<br>curl_setopt($curl, CURLOPT_POSTFIELDS, $data);<br>}<br>curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);<br>$output = curl_exec($curl);<br>curl_close($curl); return $output; }<br>$code=$_GET[‘code’];//取得微信中的code参数<br>$url=”<a href="https://api.weixin.qq.com/sns/oauth2/access_token?appid=微信公众号ID&amp;secret=微信后台有&amp;code=$code&amp;grant_type=authorization_code&quot;" target="_blank" rel="noopener">https://api.weixin.qq.com/sns/oauth2/access_token?appid=微信公众号ID&amp;secret=微信后台有&amp;code=$code&amp;grant_type=authorization_code&quot;</a>;<br>$output = https_request($url);<br>$output = json_decode($output);//以Json的格式输出<br>$array = get_object_vars($output);//转换成数组<br>$openid = $array[‘openid’];//输出openid 微信用户唯一标示`</p>
+<h2 id="不常用部分"><a href="#不常用部分" class="headerlink" title="不常用部分"></a>不常用部分</h2><blockquote>
+<p>ctrl+b ctrl+o 调换窗口位置，类似vim中的ctrl+w<br>ctrl+b 空格键 采用下一个内置布局<br>ctrl+b ! 把当前窗口变为新窗口<br>ctrl+b l 切换到最后使用的窗口<br>ctrl+b t 显示时钟<br>ctrl+b ; 切换到最后使用的面板<br>ctrl+b s 以菜单方式显示和选择会话<br>ctrl+b d 退出tmux，并保持当前会话，tmux仍在运行，此时可以通过tmux attach进入到指定会话</p>
 </blockquote>
-<p>&emsp;&emsp;错误时微信会返回JSON数据包如下（示例为Code无效错误）:</p>
-<blockquote>
-<p>{“errcode”:40029,”errmsg”:”invalid code”}</p>
-</blockquote>
-<p><a href="http://mp.weixin.qq.com/wiki/17/fa4e1434e57290788bde25603fa2fcbd.html" target="_blank" rel="noopener">全局返回码说明</a></p>
-<p>&emsp;&emsp;比较常用的就是这个Openid，可以用它来区分用户，比如用户是否已经投票，已经报名，已经领取卡券。</p>
-<p>&emsp;&emsp;讲到这里，其实获取用户的昵称，头像什么的就很简单</p>
-<p>&emsp;&emsp;我们在前面已经讲过了，网页授权有两种，使用第二种snsapi_userinfo 就可以获取到用户的详细信息。</p>
-<p>&emsp;&emsp;就是把引导用户打开的那个链接（看上文），里面的SCOPE值改成snsapi_userinfo</p>
-<p>&emsp;&emsp;<code>https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;amp;redirect_uri=REDIRECT_URI&amp;amp;response_type=code&amp;amp;scope=snsapi_userinfo&amp;amp;state=STATE#wechat_redirect</code></p>
-<p>&emsp;&emsp;然后再按上文的步骤，获code，获取access_taken，再获取用户的信息就行了。</p>
-<p>&emsp;&emsp;<em>   O(∩∩)O好的，</em> 三个知识点，都已经讲完了。</p>
 
       
     </div>
@@ -338,13 +289,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2015/11/23/微信网页授权获取用户信息/">微信网页授权获取用户信息</a></p>
+        <p><span>本文标题:</span><a href="/2018/04/10/tmux使用小记/">tmux使用小记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 edward 的个人博客">edward</a></p>
-        <p><span>发布时间:</span>2015年11月23日 - 03时18分</p>
-        <p><span>最后更新:</span>2017年12月31日 - 21时55分</p>
+        <p><span>发布时间:</span>2018年04月10日 - 23时56分</p>
+        <p><span>最后更新:</span>2018年04月11日 - 00时35分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2015/11/23/微信网页授权获取用户信息/" title="微信网页授权获取用户信息">http://youthliuxi.github.io/2015/11/23/微信网页授权获取用户信息/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://youthliuxi.github.io/2015/11/23/微信网页授权获取用户信息/　　作者: edward" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/04/10/tmux使用小记/" title="tmux使用小记">http://youthliuxi.github.io/2018/04/10/tmux使用小记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://youthliuxi.github.io/2018/04/10/tmux使用小记/　　作者: edward" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -357,18 +308,9 @@
 
 <nav id="article-nav">
   
-    <a href="/2015/12/01/深夜随笔/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          深夜随笔
-        
-      </div>
-    </a>
   
-  
-    <a href="/2015/11/10/漫威/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">漫威</div>
+    <a href="/2018/04/09/hexo备份相关/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo备份相关</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -379,7 +321,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用部分"><span class="toc-number">2.</span> <span class="toc-text">常用部分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#不常用部分"><span class="toc-number">3.</span> <span class="toc-text">不常用部分</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -427,7 +369,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2015/11/23/微信网页授权获取用户信息/" data-title="微信网页授权获取用户信息" data-url="http://youthliuxi.github.io/2015/11/23/微信网页授权获取用户信息/"></div>
+    <div class="ds-thread" data-thread-key="2018/04/10/tmux使用小记/" data-title="tmux使用小记" data-url="http://youthliuxi.github.io/2018/04/10/tmux使用小记/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -450,13 +392,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2015/12/01/深夜随笔/" title="上一篇: 深夜随笔">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2015/11/10/漫威/" title="下一篇: 漫威">
+            <a href="/2018/04/09/hexo备份相关/" title="下一篇: hexo备份相关">
                 <i class="fa fa-angle-right"></i>
             </a>
         
