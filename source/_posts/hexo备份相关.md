@@ -1,7 +1,11 @@
 ---
 title: hexo备份相关
 date: 2018-04-09 00:04:51
-tags: hexo,github,分支,master
+tags: 
+  - hexo
+  - github
+  - 分支
+  - master
 categories:
   - 学习笔记
   - 程序猿

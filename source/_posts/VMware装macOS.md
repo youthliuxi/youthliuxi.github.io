@@ -1,7 +1,11 @@
 ---
 title: VMware装macOS
 date: 2018-04-04 23:42:04
-tags: mac,macos,vmware,黑苹果
+tags: 
+  - mac
+  - macOS
+  - VMware
+  - 黑苹果
 categories:
   - 程序猿
 ---

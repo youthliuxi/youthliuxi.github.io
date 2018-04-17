@@ -1,7 +1,12 @@
 ---
 title: tmux使用小记
 date: 2018-04-10 23:56:24
-tags: linux, tmux, ubuntu
+tags: 
+	- linux
+	- tmux
+	- ubuntu
+categories:
+  - 服务器不得不说的二三事儿
 ---
 
 ## 安装

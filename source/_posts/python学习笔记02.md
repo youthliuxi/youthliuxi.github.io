@@ -1,7 +1,9 @@
 ---
 title: python学习笔记02
 date: 2018-04-01 22:20:32
-tags: python,笔记
+tags: 
+  - python
+  - 笔记
 categories:
   - 学习笔记
 ---

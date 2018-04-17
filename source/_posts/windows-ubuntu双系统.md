@@ -1,7 +1,10 @@
 ---
 title: windows+ubuntu双系统
 date: 2018-04-05 23:24:45
-tags: windows,ubuntu,双系统
+tags: 
+  - windows
+  - ubuntu
+  - 双系统
 categories:
   - 学习笔记
   - 程序猿
