@@ -2,7 +2,8 @@
 title: Android里运行ubuntu的方法（以小米2S为例）
 date: 2018-01-26 20:55:08
 tags:
-  - android，ubuntu
+  - android
+  - ubuntu
 categories:
   - 学习笔记
 ---
