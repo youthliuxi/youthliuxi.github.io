@@ -56,7 +56,7 @@ $$\frac{x^{2}y^{2}}{x+y}$$
 
 ### 求和与连乘
 ```markdown
-$$\sum_{i=0)^{n}$$ $$\prod_\epsilon$$
+$$\sum_{i=0}^{n}$$ $$\prod_\epsilon$$
 ```
 $$\sum_{i=0}^{n}$$ $$\prod_\epsilon$$
 
