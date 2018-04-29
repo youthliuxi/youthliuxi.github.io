@@ -71,7 +71,7 @@ $$\int_{a}^{\pi} f(x) \,dx$$
 $$\lim_{x \to +\infy}\frac{1}{x}$$
 $$\frac{\partial^2 u}{\partial z^2}$$
 ```
-$$\lim_{x \to +\infty}\frac{1}(x)$$
+$$\lim_{x \to +\infy}\frac{1}{x}$$
 $$\frac{\partial^2 u}{\partial z^2}$$
 
 ### 三角函数和矩阵
