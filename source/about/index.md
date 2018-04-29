@@ -25,8 +25,3 @@ date: 2015-11-30 15:56:06
 &emsp;&emsp;新浪微博：[@我比七夕少一夕](http://weibo.com/1682787817)
 &emsp;&emsp;github：[youthliuxi](https://github.com/youthliuxi)
 &emsp;&emsp;百度：[百度一下，你就知道](http://www.baidu-x.com/?q=你若盛开，蝴蝶爱来不来)
-
-小娱乐（^\_^）：
-&emsp;&emsp;公式运行魔方：[公式版](http://liuxi.site/autocube/index.html)
-&emsp;&emsp;鼠标波动魔方：[纯手动版](http://liuxi.site/diycube/index.html)
-&emsp;&emsp;拼图小游戏：[拼图小游戏](http://liuxi.site/puzzle/demo.html)
