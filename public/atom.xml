@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://youthliuxi.github.io/"/>
-  <updated>2018-04-29T14:34:46.189Z</updated>
+  <updated>2018-05-02T08:04:36.466Z</updated>
   <id>http://youthliuxi.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux权限相关</title>
+    <link href="http://youthliuxi.github.io/2018/05/02/linux%E6%9D%83%E9%99%90%E7%9B%B8%E5%85%B3/"/>
+    <id>http://youthliuxi.github.io/2018/05/02/linux权限相关/</id>
+    <published>2018-05-02T08:03:25.000Z</published>
+    <updated>2018-05-02T08:04:36.466Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="这一期，让我们愉快地讨论一下linux权限的问题"><a href="#这一期，让我们愉快地讨论一下linux权限的问题" class="headerlink" title="这一期，让我们愉快地讨论一下linux权限的问题"></a>这一期，让我们愉快地讨论一下linux权限的问题</h2><h3 id="你不知道我经历了什么系列（前言）"><a href="#你不知道我经历了什么系列（前言）" class="headerlink" title="你不知道我经历了什么系列（前言）"></a>你不知道我经历了什么系列（前言）</h3><p>&emsp;&emsp;前两天发现了一个非常有趣的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R 000 /</span><br></pre></td></tr></table></figure></p><p>&emsp;&emsp;这条命令简直就是比【sudo rm -rf /】更狠，其实这里面的关键在于，chmod命令把自己的权限将为0了，所以，他也没有任何权限可以对其他文件进行任何操作<br>&emsp;&emsp;此命令执行成功后，整个linux系统内，除了cd命令以外，全线瘫痪，ls无权使用。恢复的方法也很简单，将硬盘接入另一个linux系统中，对其进行重新的赋予权限，然后把重要运行文件拷贝出来，重装系统，重新搭建运行环境，并重新上线项目。这是我所能想到的方法，之所以需要重装系统，是因为不可能给每个系统文件单独设计权限，也无法确定每个文件的权限，而倘若给所有文件777的权限，系统一样会瘫痪，服务一样会瘫痪，linux系统不允许所有程序都拥有root权限</p><h3 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h3><p>&emsp;&emsp;这件事让我对linux的权限设置有了兴趣，梳理一下<br>|代号|作用|权限值|<br>|—-|—-|—-|<br>| r | 读 | 4 |<br>| w | 写 | 2 |<br>| x | 运行 | 1 |<br>&emsp;&emsp;由此可以组合出八种权限赋予方式，分别是<br>|模式|数字|<br>|—–|—–|<br>|rwx|7|<br>|rw-|6|<br>|r-x|5|<br>|r--|4|<br>|-wx|3|<br>|-w-|2|<br>|--x|1|<br>|---|0|<br>&emsp;&emsp;而放置权限的三位分别是文件属主拥有的权限、同组用户拥有的权限、其他用户拥有的权限</p><h3 id="chmod操作方式"><a href="#chmod操作方式" class="headerlink" title="chmod操作方式"></a>chmod操作方式</h3><p>&emsp;&emsp;chmod操作方式分为两种</p><h4 id="直接赋值型"><a href="#直接赋值型" class="headerlink" title="直接赋值型"></a>直接赋值型</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -R 777 / <span class="comment"># 给根目录下所有文件赋予最高权限值</span></span><br></pre></td></tr></table></figure><p>##权限添加型<br>&emsp;&emsp;适用于给个别用户或用户组添加或删除权限<br>|用户|意义|<br>|——|——|<br>|u|所属人(user)|<br>|g|所属群组(group)|<br>|o|其他人(other)|<br>|a|全部的人(all)|<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod o+r test.txt <span class="comment"># 允许其他用户读取test.txt</span></span><br></pre></td></tr></table></figure></p><h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>&emsp;&emsp;其实应该是四位，在这三位之前还有个文件类型标志位，他只有四种状态，只有字母表示方式，没有数字表示方式<br>|字母|类型|<br>|—–|—–|<br>|d|文件夹|<br>|-|普通文件|<br>|l|链接文件（类似windows快捷方式）|<br>|b|块设备文件（硬盘光驱类）|<br>|p|管道文件|<br>|c|字符设备文件（猫等串口设备）|<br>|s|套接口文件/数据接口文件|</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;这一期，让我们愉快地讨论一下linux权限的问题&quot;&gt;&lt;a href=&quot;#这一期，让我们愉快地讨论一下linux权限的问题&quot; class=&quot;headerlink&quot; title=&quot;这一期，让我们愉快地讨论一下linux权限的问题&quot;&gt;&lt;/a&gt;这一期，让我们愉快地讨论一下
+      
+    
+    </summary>
+    
+      <category term="服务器不得不说的二三事儿" scheme="http://youthliuxi.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8D%E5%BE%97%E4%B8%8D%E8%AF%B4%E7%9A%84%E4%BA%8C%E4%B8%89%E4%BA%8B%E5%84%BF/"/>
+    
+    
+      <category term="linux" scheme="http://youthliuxi.github.io/tags/linux/"/>
+    
+      <category term="chmod" scheme="http://youthliuxi.github.io/tags/chmod/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown添加Latex数学公式</title>
@@ -119,9 +146,9 @@
       <category term="程序猿" scheme="http://youthliuxi.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%A8%8B%E5%BA%8F%E7%8C%BF/"/>
     
     
-      <category term="hexo" scheme="http://youthliuxi.github.io/tags/hexo/"/>
-    
       <category term="github" scheme="http://youthliuxi.github.io/tags/github/"/>
+    
+      <category term="hexo" scheme="http://youthliuxi.github.io/tags/hexo/"/>
     
       <category term="分支" scheme="http://youthliuxi.github.io/tags/%E5%88%86%E6%94%AF/"/>
     
@@ -497,27 +524,6 @@
     </summary>
     
       <category term="电影部落" scheme="http://youthliuxi.github.io/categories/%E7%94%B5%E5%BD%B1%E9%83%A8%E8%90%BD/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>生日礼物小记</title>
-    <link href="http://youthliuxi.github.io/2017/04/30/%E7%94%9F%E6%97%A5%E7%A4%BC%E7%89%A9%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://youthliuxi.github.io/2017/04/30/生日礼物小记/</id>
-    <published>2017-04-29T16:41:44.000Z</published>
-    <updated>2017-05-05T07:32:48.019Z</updated>
-    
-    <content type="html"><![CDATA[<p>&emsp;&emsp;你收到了我给你订的马卡龙，艾特我说，如果你知道里面是马卡龙你一定不会这么粗暴的对待他，莫名的有些伤感，或许是因为你能对待我送给你的东西好点并不是因为是我送的，而是因为这个东西本身很有吸引力，算了，也许你最近心情不好，对待每一件快递都是这样的吧。</p><p>&emsp;&emsp;因为曾经经历的种种过往，我学会了对任何事情都不做过多的揣测，有些事儿，想多了头疼，想深了心疼。</p><p>&emsp;&emsp;我学会了一句话，叫做，我以为的并不是我以为的。嗯，就是这样，睡觉。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&amp;emsp;&amp;emsp;你收到了我给你订的马卡龙，艾特我说，如果你知道里面是马卡龙你一定不会这么粗暴的对待他，莫名的有些伤感，或许是因为你能对待我送给你的东西好点并不是因为是我送的，而是因为这个东西本身很有吸引力，算了，也许你最近心情不好，对待每一件快递都是这样的吧。&lt;/p
-      
-    
-    </summary>
     
     
   </entry>

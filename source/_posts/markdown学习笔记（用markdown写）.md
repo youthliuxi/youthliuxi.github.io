@@ -47,7 +47,7 @@ date: 2016-01-12 14:42:44
 > 用一个“\*”包起来，类似“*斜体*”表示的就是_斜体_
 
 6.表格
-<table><thead><tr><th>A</th><th>B</th></tr></thead><tbody><tr><td>这是第一条记录的A</td><td>这是第一条记录的B</td></tr><tr><td>这是第二条记录的A</td><td>这是第二条记录的B</td></tr><tr><td>这是第三条记录的A</td><td>这是第三条记录的B</td></tr><tr><td>这是第四条记录的A</td><td>这是第四条记录的B</td></tr><tr><td>这是第五条记录的A</td><td>这是第五条记录的B</td></tr><tr><td>这是第六条记录的A</td><td>这是第六条记录的B</td></tr><tr><td>
+<table><thead><tr><th>A</th><th>B</th></tr></thead><tbody><tr><td>这是第一条记录的A</td><td>这是第一条记录的B</td></tr><tr><td>这是第二条记录的A</td><td>这是第二条记录的B</td></tr><tr><td>这是第三条记录的A</td><td>这是第三条记录的B</td></tr><tr><td>这是第四条记录的A</td><td>这是第四条记录的B</td></tr><tr><td>这是第五条记录的A</td><td>这是第五条记录的B</td></tr><tr><td>这是第六条记录的A</td><td>这是第六条记录的B</td></tr>
 
 > 用“\|”来划分各个列，用“-”来划分表头和内容
 
