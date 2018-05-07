@@ -99,3 +99,38 @@ A=\left[
 \end{matrix}
 \right]
 \end{equation}$$
+
+### 数据集符号
+```markdown
+集合的大括号： \{ ... }\
+集合中的“|”： \mid
+属于： \in
+不属于： \not\in
+A包含于B： A\subset B
+A真包含于B： A\subsetneqq B
+A包含B： A\supset B
+A真包含B： A\supsetneqq B
+A不包含于B： A\not\subset B
+A交B： A\cap B
+A并B： A\cup B
+A的闭包： \overline{A}
+A减去B: A\setminus B
+实数集合： \mathbb{R}
+空集： \emptyset
+```
+
+### 希腊字母表
+| 希腊字母大小写 | Latex形式 || 希腊字母大小写 | Latex形式 |
+|:---------------------:|:-------------:||:---------------------:|:-------------:|
+| $A$ $\alpha$ | A \alpha || $N$ $\mu$ | N \mu |
+| $B$ $\beta$ | B \beta || $\Xi$ $\xi$ | \Xi \xi |
+| $\Gamma$ $\gamma$ | \Gamma \gamma || $O$ $o$ | O o |
+| $\Delta$ $\delta$ | \Delta \delta || $\Pi$ $\pi$ | \Pi \pi |
+| $E$ $\varepsilon$ $\epsilon$ | E \varepsilon \epsilon || $P$ $\varrho$ $\rho$ | P \varrho \rho |
+| $Z$ $\zeta$ | Z \zeta || $\Sigma$ $\sigma$ | \Sigma \sigma |
+| $H$ $\eta$ | H \eta || $T$ $\tau$ | T \tau |
+| $\Theta$ $\vartheta$ $\theta$ | \Theta \vartheta \theta || $\Upsilon$ $\upsilon$ | \Upsilon \upsilon |
+| $I$ $\iota$ | I \iota || $\Phi$ $\varphi$ $\phi$ | \Phi \varphi \phi |
+| $K$ $\kappa$ | K \kappa || $X$ $\chi$ | X \chi |
+| $\Lambda$ $\lambda$ | \Lambda \lambda || $\Psi$ $\psi$ | \Psi \psi |
+| $M$ $\mu$ | M \mu || $\Omega$ $\omega$ | \Omega \omega |
