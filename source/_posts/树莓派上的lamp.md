@@ -146,5 +146,12 @@ $ mysql -uroot -p
 * 【service mysql restart】或者【sudo shutdown -r now】，重启mysql服务或者，重启系统
 
 #### 至此，所有问题均已被解开，lamp运转正常，已安装wordpress，继续进行下一步测试以及项目demo搭建问题
+---
+#### 2018年5月8日更新
+##### pi-dashboard
+
+```bash
+git clone https://github.com/spoonysonny/pi-dashboard.git
+```
 
 #### 未完待续......
