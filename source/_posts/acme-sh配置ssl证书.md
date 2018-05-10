@@ -8,7 +8,7 @@ tags:
 &emsp;&emsp;就在我马上要堕落到使用宝塔面板的实名认证来申请一年期免费证书的时候，acme.sh悄然走进我的世界。
 <!--more-->
 ## 天堂之门，开启
-&emsp;&emsp;以下为简述关节，想要了解更多详情，请关注官方[wiki](https://github.com/Neilpang/acme.sh/wiki/说明)
+&emsp;&emsp;以下为简述环节，想要了解更多详情，请关注官方[wiki](https://github.com/Neilpang/acme.sh/wiki/说明)
 ### 主要操作步骤
 1. 安装acme.sh
 2. 生成证书
