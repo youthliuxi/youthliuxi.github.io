@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://youthliuxi.github.io/"/>
-  <updated>2018-05-11T17:52:24.320Z</updated>
+  <updated>2018-05-15T17:10:45.510Z</updated>
   <id>http://youthliuxi.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>android上的终端——termux</title>
+    <link href="http://youthliuxi.github.io/2018/05/16/android%E4%B8%8A%E7%9A%84%E7%BB%88%E7%AB%AF%E2%80%94%E2%80%94termux/"/>
+    <id>http://youthliuxi.github.io/2018/05/16/android上的终端——termux/</id>
+    <published>2018-05-15T17:09:03.000Z</published>
+    <updated>2018-05-15T17:10:45.510Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>&emsp;&emsp;在安卓也可以体验终端命令的快感，甚至还可以操作安卓基础硬件。<br><a id="more"></a></p><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>&emsp;&emsp;<strong>termux</strong>支持<em>apt</em>软件管理和<em>pkg</em>软件管理，首次安装时，系统会默认给出pkg的安装及更新命令，对此不做过多赘述，用过linux的可以直接上手。</p><h2 id="更换国内源"><a href="#更换国内源" class="headerlink" title="更换国内源"></a>更换国内源</h2><h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> EDITOR=vim <span class="comment"># 再此之前，应先安装vim，当然，不安装也可以用vi</span></span><br><span class="line">apt edit-sources</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;然后【<a href="https://mirrors.tuna.tsinghua.edu.cn/termux】代替原文中的【https://termux.net】，保存退出，幸福美满。" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/termux】代替原文中的【https://termux.net】，保存退出，幸福美满。</a></p><h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim  <span class="variable">$PREFIX</span>/etc/apt/sources.list</span><br></pre></td></tr></table></figure><h2 id="推荐预安装工具"><a href="#推荐预安装工具" class="headerlink" title="推荐预安装工具"></a>推荐预安装工具</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg update</span><br><span class="line">pkg install vim curl wget git unzip unrar tmux</span><br></pre></td></tr></table></figure><h2 id="管理员权限问题"><a href="#管理员权限问题" class="headerlink" title="管理员权限问题"></a>管理员权限问题</h2><p>&emsp;&emsp;无论是以下哪种管理员都有一个缺点，就是在使用蓝牙键鼠套装时，非管理员界面可以正常识别teb、ctrl、方向键。但管理员权限下，无法自动补全和使用方向键，这就意味着，一个命令输错了，只能删了重来。</p><h3 id="一、虚拟管理员-未root"><a href="#一、虚拟管理员-未root" class="headerlink" title="一、虚拟管理员(未root)"></a>一、虚拟管理员(未root)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install proot</span><br><span class="line">termux-chroot <span class="comment"># 启动命令</span></span><br></pre></td></tr></table></figure><p>&emsp;&emsp;模拟root环境的同时，还会模拟linux的文件路径。<br>&emsp;&emsp;普通文件路径是【/data/data/com.termux/file/home】<br>&emsp;&emsp;开启后的文件路径是【/home】</p><h3 id="二、真实管理员-已root"><a href="#二、真实管理员-已root" class="headerlink" title="二、真实管理员(已root)"></a>二、真实管理员(已root)</h3><p>&emsp;&emsp;先通过root向termux授予权限才能执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install tsu</span><br><span class="line">tsu <span class="comment"># 启动命令</span></span><br></pre></td></tr></table></figure></p><p>&emsp;&emsp;执行后文件路径不变，因此可以进入手机的任何一个目录</p><h2 id="python部署"><a href="#python部署" class="headerlink" title="python部署"></a>python部署</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pkg install python2</span><br><span class="line">python2 -m pip install --upgrade pip</span><br><span class="line">pkg install python</span><br><span class="line">python -m pip install --upgrade pip</span><br></pre></td></tr></table></figure><h3 id="ipython"><a href="#ipython" class="headerlink" title="ipython"></a>ipython</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install clang</span><br><span class="line">pip install ipython</span><br><span class="line">pip3.6 install ipython</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;如此便可使用【ipython】和【ipython2】进入高效编程的python交互页面。</p><h2 id="nodejs部署"><a href="#nodejs部署" class="headerlink" title="nodejs部署"></a>nodejs部署</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkg install nodejs</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure><h2 id="MariaDB-Mysql-部署"><a href="#MariaDB-Mysql-部署" class="headerlink" title="MariaDB(Mysql)部署"></a>MariaDB(Mysql)部署</h2><h3 id="安装mariadb"><a href="#安装mariadb" class="headerlink" title="安装mariadb"></a>安装mariadb</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install mariadb</span><br></pre></td></tr></table></figure><h3 id="安装基本数据"><a href="#安装基本数据" class="headerlink" title="安装基本数据"></a>安装基本数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_install_db</span><br></pre></td></tr></table></figure><h3 id="启动mariadb服务"><a href="#启动mariadb服务" class="headerlink" title="启动mariadb服务"></a>启动mariadb服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;【友情提示】：启动mysql后，该回话便无法进行任何操作，需要左滑唤醒会话菜单，开启新的回话。而倘若不在一个会话里启动mysqld，而是直接运行mysql，则会爆2002错误。</p><h3 id="修改mysql密码"><a href="#修改mysql密码" class="headerlink" title="修改mysql密码"></a>修改mysql密码</h3><p>&emsp;&emsp;以下操作均在mysqld启动后执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql_secure_installation</span><br><span class="line"><span class="comment"># 输入旧密码，空则直接回车</span></span><br><span class="line">Set root password? [Y/n] y</span><br><span class="line">New password:</span><br><span class="line">Re-enter new password:<span class="comment"># 两次输入新密码</span></span><br><span class="line"></span><br><span class="line">Remove anonymous users? [Y/n] Y <span class="comment">#是否移除匿名用户</span></span><br><span class="line">Disallow root login remotely? [Y/n] n <span class="comment">#是否不允许root远程登录</span></span><br><span class="line">Remove <span class="built_in">test</span> database and access to it? [Y/n] n <span class="comment">#是否移除test数据库</span></span><br><span class="line">Reload privilege tables now? [Y/n] y <span class="comment">#是否重新加载表的权限</span></span><br></pre></td></tr></table></figure></p><h3 id="登录mysql"><a href="#登录mysql" class="headerlink" title="登录mysql"></a>登录mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p******</span><br></pre></td></tr></table></figure><h2 id="php部署"><a href="#php部署" class="headerlink" title="php部署"></a>php部署</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install php <span class="comment"># 可采用phpinfo进行测试</span></span><br><span class="line">php -S 127.0.0.1:8080 -t www/</span><br></pre></td></tr></table></figure><h2 id="nginx部署"><a href="#nginx部署" class="headerlink" title="nginx部署"></a>nginx部署</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pkg install nginx</span><br><span class="line">nginx <span class="comment"># 默认端口是8080</span></span><br></pre></td></tr></table></figure><p>&emsp;&emsp;nginx的启动要在【termux-chroot】命令作用后再运行，否则会报错。</p><h3 id="nginx操作"><a href="#nginx操作" class="headerlink" title="nginx操作"></a>nginx操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fuser -k 8080/tcp <span class="comment"># 停止nginx服务</span></span><br><span class="line">nginx -s reload <span class="comment"># 重启nginx服务</span></span><br></pre></td></tr></table></figure><h3 id="nginx解析php"><a href="#nginx解析php" class="headerlink" title="nginx解析php"></a>nginx解析php</h3><h4 id="安装php-fpm"><a href="#安装php-fpm" class="headerlink" title="安装php-fpm"></a>安装php-fpm</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkg install php-fpm</span><br></pre></td></tr></table></figure><h4 id="配置php-fpm"><a href="#配置php-fpm" class="headerlink" title="配置php-fpm"></a>配置php-fpm</h4><p>&emsp;&emsp;在【proot】环境下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">termux-chroot</span><br><span class="line">vim /etc/php-fpm.d/www.conf</span><br></pre></td></tr></table></figure></p><p>&emsp;&emsp;将【listen = /data/data/com.termux/files/usr/var/run/php-fpm.sock】改为【listen = 127.0.0.1:9000】</p><h3 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">termux-chroot</span><br><span class="line">vim /etc/nginx/nginx.conf</span><br></pre></td></tr></table></figure><p>&emsp;&emsp;配置文件如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">worker_processes 1;</span><br><span class="line">events &#123;</span><br><span class="line">    worker_connections 1024;</span><br><span class="line">&#125;</span><br><span class="line">http &#123;</span><br><span class="line">    include mime.types;</span><br><span class="line">    default_type application/octet-stream;</span><br><span class="line">    sendfile on;</span><br><span class="line">    keepalive_timeout 65;</span><br><span class="line">    server &#123;</span><br><span class="line">        listen 8080;</span><br><span class="line">        server_name localhost;</span><br><span class="line">        root /data/data/com.termux/files/home/www;</span><br><span class="line">        index index.html index.htm;</span><br><span class="line">        error_page 500 502 503 504 /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root /data/data/com.termux/files/home/www;</span><br><span class="line">        &#125; <span class="comment"># location的右括号</span></span><br><span class="line">        location ~ \.php$ &#123;</span><br><span class="line">            root html;</span><br><span class="line">            fastcgi_pass 127.0.0.1:9000;</span><br><span class="line">            fastcgi_index index.php;</span><br><span class="line">            fastcgi_param SCRIPT_FILENAwentME /data/data/com.termux/files/home/www<span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">            include fastcgi_params;</span><br><span class="line">        &#125; <span class="comment"># localhost的右括号</span></span><br><span class="line">    &#125; <span class="comment"># server的右括号</span></span><br><span class="line">&#125; <span class="comment"># http的右括号</span></span><br></pre></td></tr></table></figure></p><h2 id="安装wordpress"><a href="#安装wordpress" class="headerlink" title="安装wordpress"></a>安装wordpress</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p*** -e<span class="string">"create database wordpress;show databases;"</span></span><br><span class="line"><span class="comment"># 以下在www文件夹下操作</span></span><br><span class="line">wget https://cn.wordpress.org/wordpress-4.9.4-zh_CN.zip</span><br><span class="line">unzip wordpress-4.9.4-zh_CN.zip</span><br><span class="line"><span class="built_in">cd</span> wordpress</span><br><span class="line">php -S 127.0.0.1:8080</span><br><span class="line"><span class="comment"># 或者采用</span></span><br><span class="line">termux-chroot <span class="comment"># nginx必须在proot环境下运行</span></span><br><span class="line">php-fpm</span><br><span class="line">nginx <span class="comment"># 在127.0.0.1:8080下直接访问</span></span><br></pre></td></tr></table></figure><p>&emsp;&emsp;目前存在疑问，wordpress放在二级文件夹会出现404，不知是不是是使用【php -S】直接安装的问题</p><h2 id="Termux-api"><a href="#Termux-api" class="headerlink" title="Termux-api"></a>Termux-api</h2><p>&emsp;&emsp;未完待续……</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;在安卓也可以体验终端命令的快感，甚至还可以操作安卓基础硬件。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://youthliuxi.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="android" scheme="http://youthliuxi.github.io/tags/android/"/>
+    
+      <category term="termux" scheme="http://youthliuxi.github.io/tags/termux/"/>
+    
+  </entry>
   
   <entry>
     <title>《复仇者联盟3：无限战争》</title>
@@ -156,9 +180,9 @@
     
       <category term="lamp" scheme="http://youthliuxi.github.io/tags/lamp/"/>
     
-      <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
-    
       <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+      <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
     
   </entry>
   
@@ -268,9 +292,9 @@
     
       <category term="linux" scheme="http://youthliuxi.github.io/tags/linux/"/>
     
-      <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
-    
       <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+      <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
     
   </entry>
   
@@ -502,30 +526,6 @@
     
       <category term="学习笔记" scheme="http://youthliuxi.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>一波毕业照引起的回忆杀~</title>
-    <link href="http://youthliuxi.github.io/2017/07/04/%E4%B8%80%E6%B3%A2%E6%AF%95%E4%B8%9A%E7%85%A7%E5%BC%95%E8%B5%B7%E7%9A%84%E5%9B%9E%E5%BF%86%E6%9D%80/"/>
-    <id>http://youthliuxi.github.io/2017/07/04/一波毕业照引起的回忆杀/</id>
-    <published>2017-07-03T16:52:56.000Z</published>
-    <updated>2018-02-19T15:05:31.445Z</updated>
-    
-    <content type="html"><![CDATA[<p>&emsp;&emsp;昨天下午（过了0点，只能叫昨天了，不睡觉的我好不习惯），无聊翻书时，突然想到起初中的毕业照，曾经被放在网页上，心血来潮的打开电脑，谷歌、bing、百度，三管齐下，半个小时以后，一无所获，2001级的毕业照都让我找到了，就是没找到2007级的，心灰意冷的我打算打开电脑，再随便搜索一波，就此打住的时候，突然间发现，当初的电子版的照片早就被我下载下来，他就那么静静的躺在我硬盘的角落，等待着我再次打开这个文件夹 ，这一等，就是好多年。<br><a id="more"></a><br>&emsp;&emsp;打开照片，一张张稚嫩的脸，一件件深藏的心底的往事浮现在眼前，突然很想见一见这些同学，曾经我们无话不谈，曾经我们针锋相对，但现在呢？想一想，自上次毕业一别之后，也有七年了吧，有些人，自当年一别，也是七年未见了。</p><p>&emsp;&emsp;和李宇一个照量，我就迸发出了一个要建微信群的想法，就在我决定要将号上的初中好友都拉进群的时候，我突然犹豫了，这样，会不会对他们来说是一种打扰，大家现在都已经有了各自的生活，有了各自的奋斗目标，有了各自的生活圈子，我的一个念想，就在大家的生活里硬塞进这么一个群，也许接下来会塞进一个聚会，又或者是，一波新的朋友圈点赞、评论，大家能接受么？</p><p>&emsp;&emsp;后来，我还是点了确定，看着群里的人数从18到30到38，最后稳定在47，我知道这个数字不会就此结束，还会再继续增加。当年的班里，有挚友，也有对头，七年分别后的再聚首，我们谁也做不到能和每个人都聊得来，但是，我就是想，能有这么一个还在活跃的群存在，虽说大家没办法抽出一个都有空的时间来进行一场大型的聚会，但是，三五个知己好友，相约一个晚饭，一次下午茶的时间还是有的，这，也许就是我建这个微信群存在的意义吧~</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;emsp;&amp;emsp;昨天下午（过了0点，只能叫昨天了，不睡觉的我好不习惯），无聊翻书时，突然想到起初中的毕业照，曾经被放在网页上，心血来潮的打开电脑，谷歌、bing、百度，三管齐下，半个小时以后，一无所获，2001级的毕业照都让我找到了，就是没找到2007级的，心灰意冷的我打算打开电脑，再随便搜索一波，就此打住的时候，突然间发现，当初的电子版的照片早就被我下载下来，他就那么静静的躺在我硬盘的角落，等待着我再次打开这个文件夹 ，这一等，就是好多年。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://youthliuxi.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="四中" scheme="http://youthliuxi.github.io/tags/%E5%9B%9B%E4%B8%AD/"/>
-    
-      <category term="四班" scheme="http://youthliuxi.github.io/tags/%E5%9B%9B%E7%8F%AD/"/>
     
   </entry>
   
