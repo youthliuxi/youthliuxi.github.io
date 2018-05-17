@@ -21,7 +21,7 @@ categories:
 export EDITOR=vim # 再此之前，应先安装vim，当然，不安装也可以用vi
 apt edit-sources
 ```
-&emsp;&emsp;然后【https://mirrors.tuna.tsinghua.edu.cn/termux】代替原文中的【https://termux.net】，保存退出，幸福美满。
+&emsp;&emsp;然后[https://mirrors.tuna.tsinghua.edu.cn/termux](https://mirrors.tuna.tsinghua.edu.cn/termux) 代替原文中的 [https://termux.net](https://termux.net)，保存退出，幸福美满。
 
 ### 二
 ```bash
