@@ -9,7 +9,6 @@ categories:
 ---
 ## 前言
 &emsp;&emsp;在安卓也可以体验终端命令的快感，甚至还可以操作安卓基础硬件。
-<!--more-->
 
 ## 基本命令
 &emsp;&emsp;**termux**支持*apt*软件管理和*pkg*软件管理，首次安装时，系统会默认给出pkg的安装及更新命令，对此不做过多赘述，用过linux的可以直接上手。
@@ -195,7 +194,30 @@ termux-chroot # nginx必须在proot环境下运行
 php-fpm
 nginx # 在127.0.0.1:8080下直接访问
 ```
-&emsp;&emsp;目前存在疑问，wordpress放在二级文件夹会出现404，不知是不是是使用【php -S】直接安装的问题
+&emsp;&emsp;目前存在疑问，wordpress放在二级文件夹会出现404，不知是不是使用【php -S】直接安装的问题
 
 ## Termux-api
-&emsp;&emsp;未完待续......
+&emsp;&emsp;这是一个神奇的东西，有了API你就可以接管手机的部分功能，调取某些参数，终端启动电话和短信也是可以的。
+### 前期准备
+&emsp;&emsp;首先安装【termux:api】，但是，目前这个app只在google play中能够下载，所以就要引入另一个app【apkpure】用来下载【termux:api】
+&emsp;&emsp;安装完成后，还要在终端中安装才能正常调用
+```bash
+pkg install termux-api
+termux-battery-status # 获取电池信息
+termux-camera-info # 获取相机信息
+termux-clipboard-get # 获取剪切板数据
+termux-clipboard-set PHP是最好的语言 # 设置新的剪切板数据
+termux-contact-list # 获取通讯录列表
+termux-sms-inbox # 获取短信内容列表
+termux-sms-send # 发送短信
+# 多号码群发
+termux-sms-send -n number(s) recipient number(s) - separate multiple numbers by commas 
+# 举例
+termux-sms-send -n 10086 ceshi
+termux-telephony-call # 拨打电话
+# 举例
+termux-telephony-call 10086
+termux-wifi-connectioninfo # 获取当前wifi链接信息
+termux-wifi-scaninfo # 获取最近一次wifi扫描信息
+```
+&emsp;&emsp;编程定时发送短信了解一下，还有更多功能等待开发呦~
