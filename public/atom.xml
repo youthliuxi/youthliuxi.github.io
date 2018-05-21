@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://youthliuxi.github.io/"/>
-  <updated>2018-05-17T03:55:24.556Z</updated>
+  <updated>2018-05-21T14:42:10.595Z</updated>
   <id>http://youthliuxi.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tensorflow安装</title>
+    <link href="http://youthliuxi.github.io/2018/05/21/tensorflow%E5%AE%89%E8%A3%85/"/>
+    <id>http://youthliuxi.github.io/2018/05/21/tensorflow安装/</id>
+    <published>2018-05-21T14:09:03.000Z</published>
+    <updated>2018-05-21T14:42:10.595Z</updated>
+    
+    <content type="html"><![CDATA[<p>&emsp;&emsp;记在前面，看文档一定要仔细，版本号错了，也有可能安装不上，我一个下午的时间白白消耗，就是因为CUDA使用的是9.2版本，而官网要求的是9.0版本，按理说应该没有太大问题，可就在执行【import tensorflow as tf】时，会报错，显示缺少9.0的文件。<br>&emsp;&emsp;cuDNN其实只是CUDA的辅助文件，所以，在版本的选用上，我选择了最新的7.1.4，目前没发现问题。发现问题也可以再替换回来。<br><a id="more"></a></p><h2 id="你不知道我经历了什么系列"><a href="#你不知道我经历了什么系列" class="headerlink" title="你不知道我经历了什么系列"></a>你不知道我经历了什么系列</h2><p>&emsp;&emsp;一大清早，我兴高采烈的打开电脑，决定正是配置tensorflow的环境，之前用正则抓取笔记成功给了我很强的动力。殊不知，在前方等待我的，是无尽的折磨。<br>&emsp;&emsp;本着“跟着官网有肉吃”的原则，我搭梯子，打开了tensorflow的官网，确定自己要安装GPU版本的tensorflow的时候我还有点小激动，毕竟通常情况下，在GPU上运行要比在CPU上运行的快，关键是，我终于可以接触到与GPU相关的东西了。<br>&emsp;&emsp;按照官网的指示，需要安装CUDA9.0和cuDNNv7.0，然后再使用pip安装tensorflow，我跌跌撞撞的走到了pip那一步，结果【pip3 install –upgrade tensorflow-gpu】结果，居然报错，安装不了。我又同时试了whl文件安装，一样不管用。<br>&emsp;&emsp;没办法，只能使用anaconda安装，本想只配置原生环境，现在是没办法，只得如此了。</p><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><ol><li>CUDA9.0</li><li>cuDNN7.0</li><li>anaconda</li><li>python3.6（我的是3.6，反正是python3就行）</li><li>和python版本相匹配的tensorflow安装文件（没有也行）</li></ol><h3 id="CUDA9-0"><a href="#CUDA9-0" class="headerlink" title="CUDA9.0"></a>CUDA9.0</h3><p>下载地址：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://developer.nvidia.com/cuda-90-download-archive</span><br></pre></td></tr></table></figure></p><p>最后记得把bin和lib/x64这两个文件夹添加到PATH里</p><h3 id="cuDNN7-1-4"><a href="#cuDNN7-1-4" class="headerlink" title="cuDNN7.1.4"></a>cuDNN7.1.4</h3><p>下载地址：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://developer.nvidia.com/rdp/cudnn-download</span><br></pre></td></tr></table></figure></p><p>最后把三个文件夹下的文件，copy到CUDA对应的文件夹下</p><h3 id="anaconda"><a href="#anaconda" class="headerlink" title="anaconda"></a>anaconda</h3><p>下载地址：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.anaconda.com/download/</span><br></pre></td></tr></table></figure></p><p>一路默认即可，安装路径保证为英文路径。<br>安装完成后，打开【Anaconda prompt】运行以下的命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看已安装的常用包</span></span><br><span class="line">conda list</span><br><span class="line"><span class="comment"># 添加清华的软件源</span></span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --<span class="built_in">set</span> show_channel_urls yes </span><br><span class="line"><span class="comment"># 创建一个名为tensorflow的python3.6的环境</span></span><br><span class="line">conda create --name tensorflow python=3.6 </span><br><span class="line"><span class="comment"># 启动该环境</span></span><br><span class="line">activate tensorflow</span><br><span class="line"><span class="comment"># 安装tensorflow（选一个即可，我肯定选GPU）</span></span><br><span class="line">python -m pip install --upgrade --ignore-installed tensorflow-gpu</span><br><span class="line">python -m pip install --upgrade --ignore-installed tensorflow</span><br><span class="line"><span class="comment"># 关闭环境</span></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure></p><p>测试tensorflow的话，只需要在python里看一下【import tensorflow as tf】能否正常即可。<br>linux的江湖规矩，没有反应就是最好的反应。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;emsp;&amp;emsp;记在前面，看文档一定要仔细，版本号错了，也有可能安装不上，我一个下午的时间白白消耗，就是因为CUDA使用的是9.2版本，而官网要求的是9.0版本，按理说应该没有太大问题，可就在执行【import tensorflow as tf】时，会报错，显示缺少9.0的文件。&lt;br&gt;&amp;emsp;&amp;emsp;cuDNN其实只是CUDA的辅助文件，所以，在版本的选用上，我选择了最新的7.1.4，目前没发现问题。发现问题也可以再替换回来。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://youthliuxi.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="tensorflow" scheme="http://youthliuxi.github.io/tags/tensorflow/"/>
+    
+      <category term="deep-learning" scheme="http://youthliuxi.github.io/tags/deep-learning/"/>
+    
+  </entry>
   
   <entry>
     <title>android上的终端——termux</title>
@@ -180,9 +204,9 @@
     
       <category term="lamp" scheme="http://youthliuxi.github.io/tags/lamp/"/>
     
-      <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-    
       <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
+    
+      <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
     
   </entry>
   
@@ -232,9 +256,9 @@
       <category term="程序猿" scheme="http://youthliuxi.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%A8%8B%E5%BA%8F%E7%8C%BF/"/>
     
     
-      <category term="github" scheme="http://youthliuxi.github.io/tags/github/"/>
-    
       <category term="hexo" scheme="http://youthliuxi.github.io/tags/hexo/"/>
+    
+      <category term="github" scheme="http://youthliuxi.github.io/tags/github/"/>
     
       <category term="分支" scheme="http://youthliuxi.github.io/tags/%E5%88%86%E6%94%AF/"/>
     
@@ -292,9 +316,9 @@
     
       <category term="linux" scheme="http://youthliuxi.github.io/tags/linux/"/>
     
-      <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-    
       <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
+    
+      <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
     
   </entry>
   
@@ -504,28 +528,6 @@
       <category term="android" scheme="http://youthliuxi.github.io/tags/android/"/>
     
       <category term="ubuntu" scheme="http://youthliuxi.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>恢复wordpress和hexo博客小记</title>
-    <link href="http://youthliuxi.github.io/2017/12/31/%E6%81%A2%E5%A4%8Dwordpress%E5%92%8Chexo%E5%8D%9A%E5%AE%A2%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://youthliuxi.github.io/2017/12/31/恢复wordpress和hexo博客小记/</id>
-    <published>2017-12-31T13:53:44.000Z</published>
-    <updated>2017-12-31T14:26:01.005Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="恢复搭载wordpress的服务器"><a href="#恢复搭载wordpress的服务器" class="headerlink" title="恢复搭载wordpress的服务器"></a>恢复搭载wordpress的服务器</h2><h4 id="1、lamp安装教程："><a href="#1、lamp安装教程：" class="headerlink" title="1、lamp安装教程："></a>1、lamp安装教程：</h4><p>&emsp;&emsp;<a href="https://lnmp.org/install.html" target="_blank" rel="noopener">https://lnmp.org/install.html</a><br>&emsp;&emsp;<a href="https://lamp.sh/install.html" target="_blank" rel="noopener">https://lamp.sh/install.html</a></p><h4 id="2、恢复数据库"><a href="#2、恢复数据库" class="headerlink" title="2、恢复数据库"></a>2、恢复数据库</h4><h4 id="3、pscp上传wordpress"><a href="#3、pscp上传wordpress" class="headerlink" title="3、pscp上传wordpress"></a>3、pscp上传wordpress</h4><h4 id="4、ln-s-源文件-现文件"><a href="#4、ln-s-源文件-现文件" class="headerlink" title="4、ln -s 源文件 现文件"></a>4、ln -s 源文件 现文件</h4><p>&emsp;&emsp;<a href="https://www.cnblogs.com/kex1n/p/5193826.html" target="_blank" rel="noopener">https://www.cnblogs.com/kex1n/p/5193826.html</a></p><h4 id="5、apache配置"><a href="#5、apache配置" class="headerlink" title="5、apache配置"></a>5、apache配置</h4><p>&emsp;&emsp;httpd.conf文件中包含<br><a id="more"></a></p><blockquote><p>Include conf/extra/httpd-vhosts.conf</p></blockquote><p>&emsp;&emsp;httpd-vhost.conf文件中包含</p><blockquote><p>Include /usr/local/apache/conf/vhost/*.conf</p></blockquote><p>&emsp;&emsp;于是我就在vhost里新建了youthliuxi.conf文件，配置域名与文件夹的关系</p><blockquote><p>注意事项：conf文件里配置文件地址，不能有软连接</p></blockquote><h4 id="6、apache重启服务"><a href="#6、apache重启服务" class="headerlink" title="6、apache重启服务"></a>6、apache重启服务</h4><p>&emsp;&emsp;<a href="http://blog.sina.com.cn/s/blog_70ac6bec01018mqs.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_70ac6bec01018mqs.html</a></p><h2 id="恢复hexo博客"><a href="#恢复hexo博客" class="headerlink" title="恢复hexo博客"></a>恢复hexo博客</h2><h4 id="1、重新安装"><a href="#1、重新安装" class="headerlink" title="1、重新安装"></a>1、重新安装</h4><p>&emsp;&emsp;重新安装nodejs、hexo以及hexo的GitHub托管插件</p><h4 id="2、移植source文件夹"><a href="#2、移植source文件夹" class="headerlink" title="2、移植source文件夹"></a>2、移植source文件夹</h4><p>&emsp;&emsp;把source文件夹完全替换掉，恢复原有的_config配置文件，就可以使用了。</p><h2 id="注意事项小记"><a href="#注意事项小记" class="headerlink" title="注意事项小记"></a>注意事项小记</h2><h4 id="1、git安装后"><a href="#1、git安装后" class="headerlink" title="1、git安装后"></a>1、git安装后</h4><blockquote><p>$ git config –global user.name “github用户名”<br>$ git config –global user.email “github邮箱”<br>$ ssh-keygen -t rsa -C “github邮箱” //生成秘钥<br>$ cd ~/.ssh<br>$ ls<br>id_dsa id_dsa.pub //把pub拷贝到github<br>//github -&gt; Settings -&gt; SSH and GPG keys</p></blockquote><h4 id="2、git-push"><a href="#2、git-push" class="headerlink" title="2、git push"></a>2、git push</h4><blockquote><p>git init<br>git add README.md<br>git commit -m “备注”<br>git remote add origin <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:用户名/项目名.git<br>git push -u origin master</p></blockquote><h4 id="3、warning-LF-will-be-replaced-by-CRLF"><a href="#3、warning-LF-will-be-replaced-by-CRLF" class="headerlink" title="3、warning: LF will be replaced by CRLF"></a>3、warning: LF will be replaced by CRLF</h4><blockquote><p>$ rm -rf .git  // 删除.git<br>$ git config –global core.autocrlf false  //禁用自动转换  </p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;恢复搭载wordpress的服务器&quot;&gt;&lt;a href=&quot;#恢复搭载wordpress的服务器&quot; class=&quot;headerlink&quot; title=&quot;恢复搭载wordpress的服务器&quot;&gt;&lt;/a&gt;恢复搭载wordpress的服务器&lt;/h2&gt;&lt;h4 id=&quot;1、lamp安装教程：&quot;&gt;&lt;a href=&quot;#1、lamp安装教程：&quot; class=&quot;headerlink&quot; title=&quot;1、lamp安装教程：&quot;&gt;&lt;/a&gt;1、lamp安装教程：&lt;/h4&gt;&lt;p&gt;&amp;emsp;&amp;emsp;&lt;a href=&quot;https://lnmp.org/install.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://lnmp.org/install.html&lt;/a&gt;&lt;br&gt;&amp;emsp;&amp;emsp;&lt;a href=&quot;https://lamp.sh/install.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://lamp.sh/install.html&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;2、恢复数据库&quot;&gt;&lt;a href=&quot;#2、恢复数据库&quot; class=&quot;headerlink&quot; title=&quot;2、恢复数据库&quot;&gt;&lt;/a&gt;2、恢复数据库&lt;/h4&gt;&lt;h4 id=&quot;3、pscp上传wordpress&quot;&gt;&lt;a href=&quot;#3、pscp上传wordpress&quot; class=&quot;headerlink&quot; title=&quot;3、pscp上传wordpress&quot;&gt;&lt;/a&gt;3、pscp上传wordpress&lt;/h4&gt;&lt;h4 id=&quot;4、ln-s-源文件-现文件&quot;&gt;&lt;a href=&quot;#4、ln-s-源文件-现文件&quot; class=&quot;headerlink&quot; title=&quot;4、ln -s 源文件 现文件&quot;&gt;&lt;/a&gt;4、ln -s 源文件 现文件&lt;/h4&gt;&lt;p&gt;&amp;emsp;&amp;emsp;&lt;a href=&quot;https://www.cnblogs.com/kex1n/p/5193826.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.cnblogs.com/kex1n/p/5193826.html&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&quot;5、apache配置&quot;&gt;&lt;a href=&quot;#5、apache配置&quot; class=&quot;headerlink&quot; title=&quot;5、apache配置&quot;&gt;&lt;/a&gt;5、apache配置&lt;/h4&gt;&lt;p&gt;&amp;emsp;&amp;emsp;httpd.conf文件中包含&lt;br&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://youthliuxi.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
     
   </entry>
   
