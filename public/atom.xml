@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://youthliuxi.github.io/"/>
-  <updated>2018-05-26T02:53:59.440Z</updated>
+  <updated>2018-06-03T16:04:42.502Z</updated>
   <id>http://youthliuxi.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>巧用bat，幸福一生</title>
+    <link href="http://youthliuxi.github.io/2018/06/03/%E5%B7%A7%E7%94%A8bat%EF%BC%8C%E5%B9%B8%E7%A6%8F%E4%B8%80%E7%94%9F/"/>
+    <id>http://youthliuxi.github.io/2018/06/03/巧用bat，幸福一生/</id>
+    <published>2018-06-03T15:58:33.000Z</published>
+    <updated>2018-06-03T16:04:42.502Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p>&emsp;&emsp;windows里每次打开bash都是在C盘user目录下的个人目录，而python的脚本在H盘，于是乎每次都要转盘，再开文件，十分的麻烦，直到使用了bat脚本，类似于linux的sh脚本。<br><a id="more"></a><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">H:</span><br><span class="line"><span class="built_in">cd</span> \python\tensorflow\</span><br></pre></td></tr></table></figure></p><p>&emsp;&emsp;保存成open_tf.bat，这样以后每次只需要在终端运行bat文件就可以了，方便、提升幸福感。<br>&emsp;&emsp;【@echo off】表示关闭所有命令的回显。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; open_tf.bat</span><br></pre></td></tr></table></figure></p><h3 id="二"><a href="#二" class="headerlink" title="二"></a>二</h3><p>&emsp;&emsp;每次更新hexo时都要打一套命令，bat脚本，一次搞定，还可以自定义注释，完美。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> /p m=</span><br><span class="line">hexo g &amp;&amp; hexo d &amp;&amp; git add * &amp;&amp; git commit -m <span class="string">"%m%"</span> &amp;&amp; git push origin hexo</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一&quot;&gt;&lt;a href=&quot;#一&quot; class=&quot;headerlink&quot; title=&quot;一&quot;&gt;&lt;/a&gt;一&lt;/h3&gt;&lt;p&gt;&amp;emsp;&amp;emsp;windows里每次打开bash都是在C盘user目录下的个人目录，而python的脚本在H盘，于是乎每次都要转盘，再开文件，十分的麻烦，直到使用了bat脚本，类似于linux的sh脚本。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://youthliuxi.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="bat" scheme="http://youthliuxi.github.io/tags/bat/"/>
+    
+      <category term="脚本" scheme="http://youthliuxi.github.io/tags/%E8%84%9A%E6%9C%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>tensorflow安装</title>
@@ -504,30 +528,6 @@
       <category term="宝塔面板" scheme="http://youthliuxi.github.io/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/"/>
     
       <category term="Retro Terminal" scheme="http://youthliuxi.github.io/tags/Retro-Terminal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Android里运行ubuntu的方法（以小米2S为例）</title>
-    <link href="http://youthliuxi.github.io/2018/01/26/Android%E9%87%8C%E8%BF%90%E8%A1%8Cubuntu%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E4%BB%A5%E5%B0%8F%E7%B1%B32S%E4%B8%BA%E4%BE%8B%EF%BC%89/"/>
-    <id>http://youthliuxi.github.io/2018/01/26/Android里运行ubuntu的方法（以小米2S为例）/</id>
-    <published>2018-01-26T12:55:08.000Z</published>
-    <updated>2018-04-28T11:20:44.330Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1，事先准备："><a href="#1，事先准备：" class="headerlink" title="1，事先准备："></a>1，事先准备：</h2><h4 id="1-一部已经root过的安卓手机（实例：小米2S，开发板系统）"><a href="#1-一部已经root过的安卓手机（实例：小米2S，开发板系统）" class="headerlink" title="(1)一部已经root过的安卓手机（实例：小米2S，开发板系统）"></a>(1)一部已经root过的安卓手机（实例：小米2S，开发板系统）</h4><h4 id="2-一个叫“终端模拟器”的APP"><a href="#2-一个叫“终端模拟器”的APP" class="headerlink" title="(2)一个叫“终端模拟器”的APP"></a>(2)一个叫“终端模拟器”的APP</h4><h4 id="3-一个ubuntu系统（包括两个文件：后缀是img的、后缀是img-md5的）"><a href="#3-一个ubuntu系统（包括两个文件：后缀是img的、后缀是img-md5的）" class="headerlink" title="(3)一个ubuntu系统（包括两个文件：后缀是img的、后缀是img.md5的）"></a>(3)一个ubuntu系统（包括两个文件：后缀是img的、后缀是img.md5的）</h4><h4 id="4-两个sh格式的文件（ubuntu-sh用于安装，bootscript-sh用于启动）"><a href="#4-两个sh格式的文件（ubuntu-sh用于安装，bootscript-sh用于启动）" class="headerlink" title="(4)两个sh格式的文件（ubuntu.sh用于安装，bootscript.sh用于启动）"></a>(4)两个sh格式的文件（ubuntu.sh用于安装，bootscript.sh用于启动）</h4><a id="more"></a><h2 id="2，过程："><a href="#2，过程：" class="headerlink" title="2，过程："></a>2，过程：</h2><h4 id="1-给已经root过的手机安装终端模拟器"><a href="#1-给已经root过的手机安装终端模拟器" class="headerlink" title="(1)给已经root过的手机安装终端模拟器"></a>(1)给已经root过的手机安装终端模拟器</h4><h4 id="2-给予终端模拟器以root权限"><a href="#2-给予终端模拟器以root权限" class="headerlink" title="(2)给予终端模拟器以root权限"></a>(2)给予终端模拟器以root权限</h4><h4 id="3-在手机内存卡根目录下新建一个文件夹取名“ubuntu”"><a href="#3-在手机内存卡根目录下新建一个文件夹取名“ubuntu”" class="headerlink" title="(3)在手机内存卡根目录下新建一个文件夹取名“ubuntu”"></a>(3)在手机内存卡根目录下新建一个文件夹取名“ubuntu”</h4><h4 id="4-将“ubuntu-img”、“ubuntu-img-md5”、“ubuntu-sh”、“bootscript-sh”四个文件均放在ubuntu文件夹内"><a href="#4-将“ubuntu-img”、“ubuntu-img-md5”、“ubuntu-sh”、“bootscript-sh”四个文件均放在ubuntu文件夹内" class="headerlink" title="(4)将“ubuntu.img”、“ubuntu.img.md5”、“ubuntu.sh”、“bootscript.sh”四个文件均放在ubuntu文件夹内"></a>(4)将“ubuntu.img”、“ubuntu.img.md5”、“ubuntu.sh”、“bootscript.sh”四个文件均放在ubuntu文件夹内</h4><h4 id="5-打开终端模拟器，以此输入以下指令，每步均单击回车（-为解释该指令的用途）"><a href="#5-打开终端模拟器，以此输入以下指令，每步均单击回车（-为解释该指令的用途）" class="headerlink" title="(5)打开终端模拟器，以此输入以下指令，每步均单击回车（//为解释该指令的用途）"></a>(5)打开终端模拟器，以此输入以下指令，每步均单击回车（//为解释该指令的用途）</h4><blockquote><p>su<br>//切换为root用户，获取最高权限<br>cd /sdcard/ubuntu<br>//进入ubuntu文件夹，sdcard里的东西，就是插上数据线在电脑里能看到的部分(不同手机请具体分析)<br>sh ubuntu.sh<br>//启动ubuntu的安装过程<br>//这个过程中通常只需要选择y(yes)，或者直接点击回车，只有一个步骤需要注意<br>//提示中出现800x400的时候，一定要输入你这款手机的屏幕分辨率<br>//x是xyz的x，不是乘号,例如小米2S是1280x720<br>1280x720</p></blockquote><h4 id="6-运行完你会看到“root-localhost-”就意味着已经进入了ubuntu系统"><a href="#6-运行完你会看到“root-localhost-”就意味着已经进入了ubuntu系统" class="headerlink" title="(6)运行完你会看到“root@localhost:/#”就意味着已经进入了ubuntu系统"></a>(6)运行完你会看到“root@localhost:/#”就意味着已经进入了ubuntu系统</h4><h2 id="3，手机内模拟远程连接显示桌面"><a href="#3，手机内模拟远程连接显示桌面" class="headerlink" title="3，手机内模拟远程连接显示桌面"></a>3，手机内模拟远程连接显示桌面</h2><h4 id="1-安装“android-VNC”软件"><a href="#1-安装“android-VNC”软件" class="headerlink" title="(1)安装“android VNC”软件"></a>(1)安装“android VNC”软件</h4><h4 id="2-打开软件，配置相关信息"><a href="#2-打开软件，配置相关信息" class="headerlink" title="(2)打开软件，配置相关信息"></a>(2)打开软件，配置相关信息</h4><blockquote><p>nickname: ubuntu<br>password: ubuntu<br>address: localhost<br>port: 5900<br>username: ubuntu<br>color format: 24-bit color(4bpp)<br>//点击上面的connect</p></blockquote><h2 id="4，android做php的小型局域网服务器"><a href="#4，android做php的小型局域网服务器" class="headerlink" title="4，android做php的小型局域网服务器"></a>4，android做php的小型局域网服务器</h2><h4 id="安装“手机服务站”app"><a href="#安装“手机服务站”app" class="headerlink" title="安装“手机服务站”app"></a>安装“手机服务站”app</h4><h4 id="该app启动后，会自动做以下操作"><a href="#该app启动后，会自动做以下操作" class="headerlink" title="该app启动后，会自动做以下操作"></a>该app启动后，会自动做以下操作</h4><blockquote><p>1、在sdcard根目录下新建文件夹“htdocs”，用作网站脚本存放的根目录<br>2、开通个人热点“zerogameAP”，密码“12345678”，用于其它设备连接此wifi进行访问（也可进行关闭，只在本机进行管理）<br>3、默认开通192.168.43.1:8080作为Lamp的访问接口，也就是网站的访问地址<br>4、默认开通2212端口作为Sshd服务的访问接口，也就是ssh远程文件管理地址<br>5、默认账号android，密码password，默认数据库端口：10000<br>6、拥有phpMyAdmin、ownCloud、Drupal7、Sshd、Transmission等功能（在关于里有介绍）</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1，事先准备：&quot;&gt;&lt;a href=&quot;#1，事先准备：&quot; class=&quot;headerlink&quot; title=&quot;1，事先准备：&quot;&gt;&lt;/a&gt;1，事先准备：&lt;/h2&gt;&lt;h4 id=&quot;1-一部已经root过的安卓手机（实例：小米2S，开发板系统）&quot;&gt;&lt;a href=&quot;#1-一部已经root过的安卓手机（实例：小米2S，开发板系统）&quot; class=&quot;headerlink&quot; title=&quot;(1)一部已经root过的安卓手机（实例：小米2S，开发板系统）&quot;&gt;&lt;/a&gt;(1)一部已经root过的安卓手机（实例：小米2S，开发板系统）&lt;/h4&gt;&lt;h4 id=&quot;2-一个叫“终端模拟器”的APP&quot;&gt;&lt;a href=&quot;#2-一个叫“终端模拟器”的APP&quot; class=&quot;headerlink&quot; title=&quot;(2)一个叫“终端模拟器”的APP&quot;&gt;&lt;/a&gt;(2)一个叫“终端模拟器”的APP&lt;/h4&gt;&lt;h4 id=&quot;3-一个ubuntu系统（包括两个文件：后缀是img的、后缀是img-md5的）&quot;&gt;&lt;a href=&quot;#3-一个ubuntu系统（包括两个文件：后缀是img的、后缀是img-md5的）&quot; class=&quot;headerlink&quot; title=&quot;(3)一个ubuntu系统（包括两个文件：后缀是img的、后缀是img.md5的）&quot;&gt;&lt;/a&gt;(3)一个ubuntu系统（包括两个文件：后缀是img的、后缀是img.md5的）&lt;/h4&gt;&lt;h4 id=&quot;4-两个sh格式的文件（ubuntu-sh用于安装，bootscript-sh用于启动）&quot;&gt;&lt;a href=&quot;#4-两个sh格式的文件（ubuntu-sh用于安装，bootscript-sh用于启动）&quot; class=&quot;headerlink&quot; title=&quot;(4)两个sh格式的文件（ubuntu.sh用于安装，bootscript.sh用于启动）&quot;&gt;&lt;/a&gt;(4)两个sh格式的文件（ubuntu.sh用于安装，bootscript.sh用于启动）&lt;/h4&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="http://youthliuxi.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="android" scheme="http://youthliuxi.github.io/tags/android/"/>
-    
-      <category term="ubuntu" scheme="http://youthliuxi.github.io/tags/ubuntu/"/>
     
   </entry>
   
