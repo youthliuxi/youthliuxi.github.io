@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://youthliuxi.github.io/"/>
-  <updated>2018-07-31T07:35:08.785Z</updated>
+  <updated>2018-07-31T09:00:14.886Z</updated>
   <id>http://youthliuxi.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>双系统折腾全纪实</title>
+    <link href="http://youthliuxi.github.io/2018/07/31/%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%8A%98%E8%85%BE%E5%85%A8%E7%BA%AA%E5%AE%9E/"/>
+    <id>http://youthliuxi.github.io/2018/07/31/双系统折腾全纪实/</id>
+    <published>2018-07-31T08:56:36.000Z</published>
+    <updated>2018-07-31T09:00:14.886Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第一步，硬盘检测"><a href="#第一步，硬盘检测" class="headerlink" title="第一步，硬盘检测"></a>第一步，硬盘检测</h2><p>台电SSD360GB入手检测.md<br><a id="more"></a></p><h2 id="第二步，整理原有系统的软件"><a href="#第二步，整理原有系统的软件" class="headerlink" title="第二步，整理原有系统的软件"></a>第二步，整理原有系统的软件</h2><p>整理原有系统的软件.md</p><h2 id="第三步，制定装机计划与软件安装计划"><a href="#第三步，制定装机计划与软件安装计划" class="headerlink" title="第三步，制定装机计划与软件安装计划"></a>第三步，制定装机计划与软件安装计划</h2><h3 id="装机计划"><a href="#装机计划" class="headerlink" title="装机计划"></a>装机计划</h3><p>360G固态硬盘，到手335G实际内存，计划分区：80G给windows系统盘，155G作为软件安装盘D盘，100G为linux系统盘（不分配盘符）<br>系统安装完成后，激活、安装驱动<br>按类还原：日常使用类、编程类、笔记类、软硬件类、冷门类的顺序还原<br>同时注意以下几点：<br>1、git、机器学习、php服务器、arduino、微信web开发者工具、nodejs（hexo）等，按顺序、按模块还原，保证各编程学习的正常运行。<br>2、各软件安装后及时恢复云端数据</p><h2 id="第四步，分区重装"><a href="#第四步，分区重装" class="headerlink" title="第四步，分区重装"></a>第四步，分区重装</h2><ol><li>重装windows10 1803版，注册机不会使用，淘宝买了注册码，10元，支持三次重装。</li><li>装机后，安装搜狗拼音到c盘，firefox到c盘（为了方便下载小马激活，结果也没用上）</li><li>装驱动，按照日常使用类、编程类、软硬件类、冷门类进行安装（为知笔记最先安装）</li><li>所有软件全部从网上下载，采用最新版本（思考，今后重装系统及软件，是否不需要保留任何形式的安装包，只需要一个安装软件列表即可）</li><li>截止到目前为止，还有hexo博客没有恢复，明天进行，开启linux模式，决定先安装ubuntu16.04与学校服务器一致（2018/7/29更新笔记）</li></ol><h2 id="第五步，Ubuntu装机开始"><a href="#第五步，Ubuntu装机开始" class="headerlink" title="第五步，Ubuntu装机开始"></a>第五步，Ubuntu装机开始</h2><p>自配置深度学习分布式服务器.md</p><h2 id="习惯操作"><a href="#习惯操作" class="headerlink" title="习惯操作"></a>习惯操作</h2><h3 id="修改默认启动项"><a href="#修改默认启动项" class="headerlink" title="修改默认启动项"></a>修改默认启动项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/default/gurb</span><br><span class="line"><span class="comment">#修改 GRUB_DEFAULT=2，编号从0开始，默认是0</span></span><br><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;第一步，硬盘检测&quot;&gt;&lt;a href=&quot;#第一步，硬盘检测&quot; class=&quot;headerlink&quot; title=&quot;第一步，硬盘检测&quot;&gt;&lt;/a&gt;第一步，硬盘检测&lt;/h2&gt;&lt;p&gt;台电SSD360GB入手检测.md&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="http://youthliuxi.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="ubuntu" scheme="http://youthliuxi.github.io/tags/ubuntu/"/>
+    
+      <category term="windows10" scheme="http://youthliuxi.github.io/tags/windows10/"/>
+    
+  </entry>
   
   <entry>
     <title>巧用bat，幸福一生</title>
@@ -228,9 +252,9 @@
     
       <category term="lamp" scheme="http://youthliuxi.github.io/tags/lamp/"/>
     
-      <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-    
       <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
+    
+      <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
     
   </entry>
   
@@ -340,9 +364,9 @@
     
       <category term="linux" scheme="http://youthliuxi.github.io/tags/linux/"/>
     
-      <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
-    
       <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
+    
+      <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
     
   </entry>
   
@@ -500,34 +524,6 @@
       <category term="递归" scheme="http://youthliuxi.github.io/tags/%E9%80%92%E5%BD%92/"/>
     
       <category term="汉罗塔" scheme="http://youthliuxi.github.io/tags/%E6%B1%89%E7%BD%97%E5%A1%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux随手记之——宝塔和终端</title>
-    <link href="http://youthliuxi.github.io/2018/01/26/linux%E9%9A%8F%E6%89%8B%E8%AE%B0%E4%B9%8B%E2%80%94%E2%80%94%E5%AE%9D%E5%A1%94%E5%92%8C%E7%BB%88%E7%AB%AF/"/>
-    <id>http://youthliuxi.github.io/2018/01/26/linux随手记之——宝塔和终端/</id>
-    <published>2018-01-26T14:33:49.000Z</published>
-    <updated>2018-07-31T07:35:08.776Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="宝塔面板"><a href="#宝塔面板" class="headerlink" title="宝塔面板"></a>宝塔面板</h2><p>&emsp;&emsp;重装linux服务器之后，第一时间安装了宝塔linux面板<br>&emsp;&emsp;曾经自己配置apache + php + mysql + phpmyadmin，也安装过套装lamp和lnmp，但是最近时间紧，任务重，主要是希望对linux进行精简的整理，以操作简单为主要目的构想，所以，安装了宝塔linux面板，用来对网站进行管理<a id="more"></a><br>&emsp;&emsp;近期宝塔系统出现一定程度的不稳定，不定期的出现database无法登陆的现象，以至于无论是phpmyadmin还是网站脚本都无法访问数据，必须采取重置数据库密码的方式才能回复对数据库的访问，疑似存在sql注入一类的行为、或系统存在定期修改数据库密码的脚本<br>&emsp;&emsp;现做出部分处理：</p><blockquote><p>删除博客的独立数据库<br>为宝塔面板单独绑定子域名，限制其他访问渠道</p></blockquote><h2 id="Rrtro-Terminal"><a href="#Rrtro-Terminal" class="headerlink" title="Rrtro Terminal"></a>Rrtro Terminal</h2><p>&emsp;&emsp;这是一个可以吧linux的终端模拟成显像管显示器的程序，安装上这个软件，就可以体会一把，苹果第一代电脑的操作感受，除了好玩儿，也没啥。<br>&emsp;&emsp;github地址：</p><blockquote><p><a href="https://github.com/Swordfish90/cool-retro-term" target="_blank" rel="noopener">cool-retro-term</a></p></blockquote><p>&emsp;&emsp;ubuntu下我的操作是：</p><blockquote><p>sudo add-apt-repository ppa:noobslab/apps<br>sudo apt-get update<br>sudo apt-get install cool-retro-term</p></blockquote><p>&emsp;&emsp;但，在解析的最后报了一个错，我并没有分析查找原因，而是点击了提示中给予的下载链接</p><blockquote><p><a href="http://101.96.10.24/ppa.launchpad.net/noobslab/apps/ubuntu/pool/main/c/cool-retro-term/cool-retro-term_1.0.2-xenial_amd64.deb" target="_blank" rel="noopener">http://101.96.10.24/ppa.launchpad.net/noobslab/apps/ubuntu/pool/main/c/cool-retro-term/cool-retro-term_1.0.2-xenial_amd64.deb</a></p></blockquote><p>&emsp;&emsp;把deb安装包下载到了ubuntu中，并且，直接进行了安装，ok，搞定（毕竟安装这个东西的，肯定是Desktop版，直接用火狐下载就可以了）</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;宝塔面板&quot;&gt;&lt;a href=&quot;#宝塔面板&quot; class=&quot;headerlink&quot; title=&quot;宝塔面板&quot;&gt;&lt;/a&gt;宝塔面板&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;重装linux服务器之后，第一时间安装了宝塔linux面板&lt;br&gt;&amp;emsp;&amp;emsp;曾经自己配置apache + php + mysql + phpmyadmin，也安装过套装lamp和lnmp，但是最近时间紧，任务重，主要是希望对linux进行精简的整理，以操作简单为主要目的构想，所以，安装了宝塔linux面板，用来对网站进行管理
-    
-    </summary>
-    
-      <category term="服务器不得不说的二三事儿" scheme="http://youthliuxi.github.io/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8D%E5%BE%97%E4%B8%8D%E8%AF%B4%E7%9A%84%E4%BA%8C%E4%B8%89%E4%BA%8B%E5%84%BF/"/>
-    
-    
-      <category term="apache" scheme="http://youthliuxi.github.io/tags/apache/"/>
-    
-      <category term="phpmyadmin" scheme="http://youthliuxi.github.io/tags/phpmyadmin/"/>
-    
-      <category term="宝塔面板" scheme="http://youthliuxi.github.io/tags/%E5%AE%9D%E5%A1%94%E9%9D%A2%E6%9D%BF/"/>
-    
-      <category term="Retro Terminal" scheme="http://youthliuxi.github.io/tags/Retro-Terminal/"/>
     
   </entry>
   
