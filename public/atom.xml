@@ -252,9 +252,9 @@
     
       <category term="lamp" scheme="http://youthliuxi.github.io/tags/lamp/"/>
     
-      <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
-    
       <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+      <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
     
   </entry>
   
@@ -319,9 +319,9 @@
     <link href="http://youthliuxi.github.io/2018/04/05/windows-ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F/"/>
     <id>http://youthliuxi.github.io/2018/04/05/windows-ubuntu双系统/</id>
     <published>2018-04-05T15:24:45.000Z</published>
-    <updated>2018-07-31T07:35:08.779Z</updated>
+    <updated>2018-08-16T02:51:41.977Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>我的情况是：使用的笔记本装了个windows10系统，但日前打算较长时间使用linux系统，而对虚拟机里运行linux有一定的不稳定感，所以，才会准备在电脑里，辟出60G的空间，安装ubuntu，让实体机彻底进入我的生活，同时保证不打乱之前的设置。<br><a id="more"></a></p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>一台windows系统的电脑，其中一个分区能够压缩出40~60G空间</li><li>一颗大于8G的U盘</li><li>ubuntu系统镜像，从<a href="https://www.ubuntu.com/index_kylin" target="_blank" rel="noopener">ubuntu官网</a>下载，推荐选择desktop版，自己的笔记本要啥server版，又hold不住</li><li>一个U盘启动项制作工具，大白菜、老毛桃、u启动、powerISO……个人推荐powerISO，操作方便，不需要才写个PE啥的</li><li>软件easyBCD</li></ul><h2 id="开始动手"><a href="#开始动手" class="headerlink" title="开始动手"></a>开始动手</h2><ol><li>右键单击“此电脑”，以此选择“管理”-&gt;“磁盘管理”，从目标磁盘中压缩出60G的未分配空间，不需要做任何处理</li><li>使用powerISO打开系统镜像，并将其烧录进U盘里</li><li>进入windows10电源选项，关闭快速启动</li><li>关机，开机，使用bios或者快速选择U盘启动</li><li>依次选择“中文简体”，“安装ubuntu”，“暂时不连接网络”，“安装第三方软件”</li><li>下面进入最关键的分区情况，以下列举我的分区方案，仅供参考（60G方案）</li></ol><table><thead><tr><th>挂载点</th><th style="text-align:center">分区类别</th><th style="text-align:right">用于</th><th style="text-align:right">大小</th></tr></thead><tbody><tr><td>无</td><td style="text-align:center">逻辑分区</td><td style="text-align:right">交换空间</td><td style="text-align:right">内存的两倍</td></tr><tr><td>/</td><td style="text-align:center">主分区</td><td style="text-align:right">Ext4</td><td style="text-align:right">20G</td></tr><tr><td>/boot</td><td style="text-align:center">逻辑分区</td><td style="text-align:right">Ext4</td><td style="text-align:right">500Mb</td></tr><tr><td>/home</td><td style="text-align:center">逻辑分区</td><td style="text-align:right">Ext4</td><td style="text-align:right">剩下的所有</td></tr></tbody></table><ol start="7"><li>为了保证ubuntu绝对不影响windows，我们采用windows的引导，所以，在这里，把“安装启动引导器的设备”选择在/boot所在的分区里</li><li>点击“现在安装”，安装过程就基本结束了，剩下的就是等待了</li><li>安装完成后，去windows系统内，装easyBCD，把ubuntu的/boot所在分区添加进引导项</li></ol><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>以上的某个步骤操作不明白可以百度找教程</li><li>以上处理方式保留了windows的引导，所以，如果进入linux系统，会出现，先在windows系统引导中选择一次ubuntu，再从linux的引导中再选择一次ubuntu，目前没有找到比较好的办法关闭GNU grub2引导，我找到的办法是，打开“/etc/default/grub”文件，把time的值从10改为1，然后保存退出，运行【sudo update-grub2】，运行结束，重启即可</li><li>双系统影响windows时间的问题：<ol><li>“运行”-&gt;“regedit”</li><li>以此选择“HKEY_LOCAL_MACHINE”-&gt;“SYSTEM”-&gt;“CurrentControlSet”-&gt;“Control”-&gt;“TimeZoneInformation”</li><li>右侧空白处右键单击，选择“新建”-&gt;“QWORD（64位）值”，我是64位的系统</li><li>文件名“RealTimeIsUniversal”，数值数据“1”，基数“十六进制”，点击“确定”</li><li>重启，搞定。</li></ol></li></ol><h2 id="牢骚"><a href="#牢骚" class="headerlink" title="牢骚"></a>牢骚</h2><p>失败了一个下午，结果发现，安装过程中断报错的原因，竟然是我使用了一个非常老旧的U盘，其内部有存储模块损坏，所以，才会在拷贝数据的时候出现问题。换了一个新买的，就解决问题了，神坑啊，害得我忙活了一下午，差点就放弃了。</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>我的情况是：使用的笔记本装了个windows10系统，但日前打算较长时间使用linux系统，而对虚拟机里运行linux有一定的不稳定感，所以，才会准备在电脑里，辟出60G的空间，安装ubuntu，让实体机彻底进入我的生活，同时保证不打乱之前的设置。<br><a id="more"></a></p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>一台windows系统的电脑，其中一个分区能够压缩出40~60G空间</li><li>一颗大于8G的U盘</li><li>ubuntu系统镜像，从<a href="https://www.ubuntu.com/index_kylin" target="_blank" rel="noopener">ubuntu官网</a>下载，推荐选择desktop版，自己的笔记本要啥server版，又hold不住</li><li>一个U盘启动项制作工具，大白菜、老毛桃、u启动、powerISO……个人推荐powerISO，操作方便，不需要才写个PE啥的</li><li>软件easyBCD</li></ul><h2 id="开始动手"><a href="#开始动手" class="headerlink" title="开始动手"></a>开始动手</h2><ol><li>右键单击“此电脑”，以此选择“管理”-&gt;“磁盘管理”，从目标磁盘中压缩出60G的未分配空间，不需要做任何处理</li><li>使用powerISO打开系统镜像，并将其烧录进U盘里</li><li>进入windows10电源选项，关闭快速启动</li><li>关机，开机，使用bios或者快速选择U盘启动</li><li>依次选择“中文简体”，“安装ubuntu”，“暂时不连接网络”，“安装第三方软件”</li><li>下面进入最关键的分区情况，以下列举我的分区方案，仅供参考（100G方案）</li></ol><table><thead><tr><th>挂载点</th><th style="text-align:center">分区类别</th><th style="text-align:right">用于</th><th style="text-align:right">大小</th></tr></thead><tbody><tr><td>无</td><td style="text-align:center">逻辑分区</td><td style="text-align:right">交换空间</td><td style="text-align:right">内存的两倍</td></tr><tr><td>/</td><td style="text-align:center">主分区</td><td style="text-align:right">Ext4</td><td style="text-align:right">50G</td></tr><tr><td>/boot</td><td style="text-align:center">逻辑分区</td><td style="text-align:right">Ext4</td><td style="text-align:right">500Mb</td></tr><tr><td>/home</td><td style="text-align:center">逻辑分区</td><td style="text-align:right">Ext4</td><td style="text-align:right">剩下的所有</td></tr></tbody></table><ol start="7"><li>为了保证ubuntu绝对不影响windows，我们采用windows的引导，所以，在这里，把“安装启动引导器的设备”选择在/boot所在的分区里</li><li>点击“现在安装”，安装过程就基本结束了，剩下的就是等待了</li><li>安装完成后，去windows系统内，装easyBCD，把ubuntu的/boot所在分区添加进引导项</li></ol><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol><li>以上的某个步骤操作不明白可以百度找教程</li><li>以上处理方式保留了windows的引导，所以，如果进入linux系统，会出现，先在windows系统引导中选择一次ubuntu，再从linux的引导中再选择一次ubuntu，目前没有找到比较好的办法关闭GNU grub2引导，我找到的办法是，打开“/etc/default/grub”文件，把time的值从10改为1，然后保存退出，运行【sudo update-grub2】，运行结束，重启即可</li><li>双系统影响windows时间的问题：<ol><li>“运行”-&gt;“regedit”</li><li>以此选择“HKEY_LOCAL_MACHINE”-&gt;“SYSTEM”-&gt;“CurrentControlSet”-&gt;“Control”-&gt;“TimeZoneInformation”</li><li>右侧空白处右键单击，选择“新建”-&gt;“QWORD（64位）值”，我是64位的系统</li><li>文件名“RealTimeIsUniversal”，数值数据“1”，基数“十六进制”，点击“确定”</li><li>重启，搞定。</li></ol></li></ol><h2 id="牢骚"><a href="#牢骚" class="headerlink" title="牢骚"></a>牢骚</h2><p>失败了一个下午，结果发现，安装过程中断报错的原因，竟然是我使用了一个非常老旧的U盘，其内部有存储模块损坏，所以，才会在拷贝数据的时候出现问题。换了一个新买的，就解决问题了，神坑啊，害得我忙活了一下午，差点就放弃了。</p>]]></content>
     
     <summary type="html">
     
@@ -364,9 +364,9 @@
     
       <category term="linux" scheme="http://youthliuxi.github.io/tags/linux/"/>
     
-      <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
-    
       <category term="树莓派" scheme="http://youthliuxi.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+      <category term="raspberrypi" scheme="http://youthliuxi.github.io/tags/raspberrypi/"/>
     
   </entry>
   
